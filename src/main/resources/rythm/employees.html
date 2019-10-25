@@ -54,14 +54,14 @@
   <div>
     <ul id="menu-list">
       @menuItem("https://github.com/act-gallery/excel/blob/master/README.md", "README")
-      @menuItem("/json", "Get JSON data")
-      @menuItem("/xml", "Get XML data")
-      @menuItem("/yaml", "Get YAML data")
-      @menuItem("/csv", "Download csv file")
-      @menuItem("/xls", "Download xls file")
-      @menuItem("/xlsx", "Download xlsx file")
-      @menuItem("/template/xls", "Download xls file", "rendered with <a target='_blank' href='http://jxls.sourceforge.net/'>JXLS</a> <a target='_blank' href='https://github.com/act-gallery/excel/blob/master/src/main/resources/excel/demo/excel/EmployeeService/template.xls'>template</a>")
-      @menuItem("/template/xlsx", "Download xlsx file", "rendered with <a target='_blank' href='http://jxls.sourceforge.net/'>JXLS</a> <a target='_blank' href='https://github.com/act-gallery/excel/blob/master/src/main/resources/excel/demo/excel/EmployeeService/template.xlsx'>template</a>")
+      @menuItem("/?_accept=json", "Get JSON data")
+      @menuItem("/?_accept=xml", "Get XML data")
+      @menuItem("/?_accept=yaml", "Get YAML data")
+      @menuItem("/?_accept=csv", "Download csv file")
+      @menuItem("/?_accept=xls", "Download xls file")
+      @menuItem("/?_accept=xlsx", "Download xlsx file")
+      @menuItem("/template?_accept=xls", "Download xls file", "rendered with <a target='_blank' href='http://jxls.sourceforge.net/'>JXLS</a> <a target='_blank' href='https://github.com/act-gallery/excel/blob/master/src/main/resources/excel/demo/excel/EmployeeService/template.xls'>template</a>")
+      @menuItem("/template?_accept=xlsx", "Download xlsx file", "rendered with <a target='_blank' href='http://jxls.sourceforge.net/'>JXLS</a> <a target='_blank' href='https://github.com/act-gallery/excel/blob/master/src/main/resources/excel/demo/excel/EmployeeService/template.xlsx'>template</a>")
     </ul>
   </div>
 
@@ -90,4 +90,3 @@
     }
     </tbody>
   </table>
-

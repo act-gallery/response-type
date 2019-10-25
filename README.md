@@ -29,7 +29,7 @@ unzip *.zip
 Once you started you can navigate browser to `http://localhost:5460`, there
  you should be able to see the home page of the application:
  
-![image](https://user-images.githubusercontent.com/216930/65925088-ae94dd00-e432-11e9-9070-bd300d7a27f3.png)
+![image](https://user-images.githubusercontent.com/216930/67554599-734cac00-f75b-11e9-86ad-7a58631e424c.png)
 
 ## Inside the App
 
@@ -67,12 +67,20 @@ Note:
  will be used to render the column header of `csv` and excel files; **Note**
  that JSON, XML and YAML file does not favor `@Label` annotation.
 
-2. In the app there is a [TestDataGenerator](https://github.com/act-gallery/excel/blob/master/src/main/java/demo/excel/TestDataGenerator.java#L36) 
+2. In the app there is a [TestDataGenerator](https://github.com/act-gallery/response-type/blob/master/src/main/java/demo/resp_type/TestDataGenerator.java#L38) 
 class which is used to generate a random list of Employee records. 
 
 ### The Service
 
 ```java
+// By using `@TemplateContext` we make it easy to specify where to locate
+// the template file to render the response.
+// If the template context is not specified, then the default template dir
+// will be <package-names>/<ClassName>, e.g. for this specific `EmployeeService`
+// class, the default template context is
+// `{template-root}/demo/resp_type/EmployeeService`, where the `{template-root}`
+// is the template engine id, e.g. `rythm`, `excel` which is used in this
+// application.
 @TemplateContext("/")
 public class EmployeeService {
 
@@ -88,7 +96,7 @@ public class EmployeeService {
     }
 
     @GetAction
-    @PropertySpec(cli = "id as Id, firstName as First name, lastName as Last name, grade as Grade")
+    @PropertySpec(cli = "id, firstName, lastName, grade")
     @Command(value = "employees", help = "list all employees")
     public List<Employee> employees() {
         return employees;
@@ -124,35 +132,20 @@ The employee table renders all employees in the `employees` list injected
  
 The links are for getting employee list in different data presentation:
 
-* `/json` - get employee list in JSON data
-* `/xml` - get employee list in XML data
-* `/yaml` - get employee list in YAML data
-* `/csv` - get employee list in CSV file
-* `/xls` - get employee list in xls file
-* `/xlsx` - get employee list in xlsx file
-* `/template/xls` - get employee list in xls file - rendered with predefined
+* `/?_accept=json` - get employee list in JSON data
+* `/?_accept=xml` - get employee list in XML data
+* `/?_accept=yaml` - get employee list in YAML data
+* `/?_accept=csv` - get employee list in CSV file
+* `/?_accept=xls` - get employee list in xls file
+* `/?_accept=xlsx` - get employee list in xlsx file
+* `/template?_accept=xls` - get employee list in xls file - rendered with predefined
  template
-* `/template/xlsx` - get employee list in xlsx file - rendered with
+* `/template?_accept=xlsx` - get employee list in xlsx file - rendered with
  predefined template
- 
-An immediate question one might ask is there is no request handlers defined
- for these URLs, how can we get the response sent to these endpoints?
- 
-The answer is they all direct to `GET /` endpoint with different `Accept
-` header rewritten to the request.
 
-If we open the `/resources/app.properties` file we can see the following
- configuration:
- 
-```properties
-content_suffix.aware=true
-```
-
-This configuration tells ActFramework to treat `/{content-suffix}` as `Accept
-` header written, thus when it received a request to `/json`, it rewrite the
- `Accept` header of incoming request to `application/json` and route to
-  `/` endpoint, similar things happen for `xml`, `yaml`, `/csv`, `/xls` and 
-  `/xlsx` URLs. 
+It is quite obvious that we are using `_accept` query parameter to specify the expected 
+content type, which overwrite the `Accept` HTTP header. While ActFramework detect the
+specified `Accept` content-type, it generate the corresponding response accordingly.
  
 #### The excel templates
 
@@ -185,5 +178,5 @@ This demo app shows
 1. How to generate response in different content types
 1. How to generate excel file directly
 2. How to generate excel file via JXLS template
-3. How to use `content_suffix.aware=true` to allow ActFramework overwrite
+3. How to use `_accept` query parameter to overwrite
  `Accept` header of incoming request

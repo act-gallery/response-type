@@ -7,6 +7,7 @@ import act.util.PropertySpec;
 import org.osgl.inject.annotation.LoadCollection;
 import org.osgl.mvc.annotation.GetAction;
 
+import java.io.File;
 import java.util.List;
 
 // By using `@TemplateContext` we make it easy to specify where to locate
@@ -32,7 +33,7 @@ public class EmployeeService {
     }
 
     @GetAction
-    @PropertySpec(cli = "id as Id, firstName as First name, lastName as Last name, grade as Grade")
+    @PropertySpec(cli = "id, firstName, lastName, grade")
     @Command(value = "employees", help = "list all employees")
     public List<Employee> employees() {
         return employees;
