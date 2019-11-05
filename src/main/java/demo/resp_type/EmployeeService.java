@@ -6,6 +6,7 @@ import act.controller.annotation.TemplateContext;
 import act.util.PropertySpec;
 import org.osgl.inject.annotation.LoadCollection;
 import org.osgl.mvc.annotation.GetAction;
+import org.osgl.util.C;
 
 import java.io.File;
 import java.util.List;
