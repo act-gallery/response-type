@@ -132,15 +132,16 @@ The employee table renders all employees in the `employees` list injected
  
 The links are for getting employee list in different data presentation:
 
-* `/?_accept=json` - get employee list in JSON data
-* `/?_accept=xml` - get employee list in XML data
-* `/?_accept=yaml` - get employee list in YAML data
-* `/?_accept=csv` - get employee list in CSV file
-* `/?_accept=xls` - get employee list in xls file
-* `/?_accept=xlsx` - get employee list in xlsx file
-* `/template?_accept=xls` - get employee list in xls file - rendered with predefined
+* `/?_accept=json` - view employee list in JSON
+* `/?_accept=xml` - view employee list in XML
+* `/?_accept=yaml` - view employee list in YAML
+* `/?_accept=htmltable` - view employee list in built-in HTML table
+* `/?_accept=csv` - download employee list in CSV file
+* `/?_accept=xls` - download employee list in xls file
+* `/?_accept=xlsx` - download employee list in xlsx file
+* `/template?_accept=xls` - download employee list in xls file - rendered with predefined
  template
-* `/template?_accept=xlsx` - get employee list in xlsx file - rendered with
+* `/template?_accept=xlsx` - download employee list in xlsx file - rendered with
  predefined template
 
 It is quite obvious that we are using `_accept` query parameter to specify the expected 

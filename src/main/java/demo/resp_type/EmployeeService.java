@@ -7,6 +7,7 @@ import act.util.PropertySpec;
 import org.osgl.inject.annotation.LoadCollection;
 import org.osgl.mvc.annotation.GetAction;
 import org.osgl.util.C;
+import org.osgl.xls.ExcelReader;
 
 import java.io.File;
 import java.util.List;
@@ -24,6 +25,11 @@ public class EmployeeService {
 
     @LoadCollection(TestDataGenerator.class)
     private List<Employee> employees;
+
+
+
+
+
 
     @GetAction("template")
     public List<Employee> template(ActionContext context) {

@@ -28,13 +28,19 @@
     }
     ul#menu-list {
       padding-left: 15px;
-
+      margin-top: 0;
     }
     ul li {
       padding: 3px 0;
     }
     span#version {
       font-size: 10pt
+    }
+    .subtitle {
+      font-family: "Droid Sans",Tahoma,Helvetica,Arial,Sans;
+      margin-bottom: 8px;
+      border-bottom: 1px solid;
+      padding-bottom: 2px;
     }
   </style>
 
@@ -52,11 +58,13 @@
   }
 
   <div>
+    <div class="subtitle">Response Types</div>
     <ul id="menu-list">
       @menuItem("https://github.com/act-gallery/excel/blob/master/README.md", "README")
-      @menuItem("/?_accept=json", "Get JSON data")
-      @menuItem("/?_accept=xml", "Get XML data")
-      @menuItem("/?_accept=yaml", "Get YAML data")
+      @menuItem("/?_accept=json", "JSON View")
+      @menuItem("/?_accept=xml", "XML View")
+      @menuItem("/?_accept=yaml", "YAML View")
+      @menuItem("/?_accept=htmltable", "Table View")
       @menuItem("/?_accept=csv", "Download csv file")
       @menuItem("/?_accept=xls", "Download xls file")
       @menuItem("/?_accept=xlsx", "Download xlsx file")
@@ -74,6 +82,8 @@
   </tr>
   }
 
+
+  <div class="subtitle">Template rendered Data Table</div>
   <table class="table">
     <thead>
     <tr>
