@@ -21,32 +21,28 @@
 
   <groupId>org.actframework.demo</groupId>
   <artifactId>response-type</artifactId>
-  <version>1.8.29</version>
+  <version>1.9.0</version>
 
   <name>actframework app demo - response type</name>
   <description>demonstrate how to generate response in different type, ie. JSON, XML, YAML, CSV etc</description>
   <url>http://actframework.org/</url>
 
   <properties>
+    <java.version>7</java.version>
     <app.entry>demo.resp_type.AppEntry</app.entry>
   </properties>
 
   <parent>
     <groupId>org.actframework</groupId>
     <artifactId>act-starter-parent</artifactId>
-    <version>1.8.29.0</version>
+    <version>1.9.0.1</version>
   </parent>
 
   <dependencies>
 
     <dependency>
       <groupId>org.actframework</groupId>
-      <artifactId>act</artifactId>
-      <version>1.8.30-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>org.actframework</groupId>
-      <artifactId>act-starter-excel</artifactId>
+      <artifactId>act-excel</artifactId>
     </dependency>
 
   </dependencies>

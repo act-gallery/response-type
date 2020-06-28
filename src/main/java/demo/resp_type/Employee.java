@@ -30,17 +30,19 @@ public class Employee {
         E06, E07, E08, E09, E10, E11
     }
 
-    @Label("工号")
-    public String id;
+    public Integer id;
 
-    @Label("名")
+    @Label("First name")
     public String firstName;
 
-    @Label("姓")
+    @Label("Last name")
     public String lastName;
 
-    @Label("级别")
+    @Label("Grade")
     public Grade grade;
+
+    @Label("Level")
+    public int level;
 
     @Override
     public String toString() {

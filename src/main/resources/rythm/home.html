@@ -61,13 +61,14 @@
     <div class="subtitle">Response Types</div>
     <ul id="menu-list">
       @menuItem("https://github.com/act-gallery/excel/blob/master/README.md", "README")
-      @menuItem("/?_accept=json", "JSON View")
-      @menuItem("/?_accept=xml", "XML View")
-      @menuItem("/?_accept=yaml", "YAML View")
-      @menuItem("/?_accept=htmltable", "Table View")
-      @menuItem("/?_accept=csv", "Download csv file")
-      @menuItem("/?_accept=xls", "Download xls file")
-      @menuItem("/?_accept=xlsx", "Download xlsx file")
+      @menuItem("/employees", "Default Data View")
+      @menuItem("/employees?_accept=json", "JSON View")
+      @menuItem("/employees?_accept=xml", "XML View")
+      @menuItem("/employees?_accept=yaml", "YAML View")
+      @menuItem("/employees?_accept=html-table", "Table View")
+      @menuItem("/employees?_accept=csv", "Download csv file")
+      @menuItem("/employees?_accept=xls", "Download xls file")
+      @menuItem("/employees?_accept=xlsx", "Download xlsx file")
       @menuItem("/template?_accept=xls", "Download xls file", "rendered with <a target='_blank' href='http://jxls.sourceforge.net/'>JXLS</a> <a target='_blank' href='https://github.com/act-gallery/excel/blob/master/src/main/resources/excel/demo/excel/EmployeeService/template.xls'>template</a>")
       @menuItem("/template?_accept=xlsx", "Download xlsx file", "rendered with <a target='_blank' href='http://jxls.sourceforge.net/'>JXLS</a> <a target='_blank' href='https://github.com/act-gallery/excel/blob/master/src/main/resources/excel/demo/excel/EmployeeService/template.xlsx'>template</a>")
     </ul>
