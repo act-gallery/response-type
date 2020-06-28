@@ -29,7 +29,6 @@ import java.util.List;
 @Singleton
 public class EmployeeService {
 
-    @NoBind
     private List<Employee> employees;
 
     @PostConstruct
